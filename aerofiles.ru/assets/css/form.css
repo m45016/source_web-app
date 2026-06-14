@@ -1,0 +1,66 @@
+@media (prefers-color-scheme: dark) {
+  .formBlock input:not(input[type='submit']) {
+    border: 1px solid var(--border-dark) !important;
+    background-color: var(--surface-dark) !important;
+    color: var(--text-primary-dark) !important;
+  }
+
+  .formBlock a {
+    color: var(--text-primary-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+
+  .formBlock input:not(input[type='submit']) {
+    border: 1px solid var(--border-dark);
+    background-color: var(--surface);
+    color: var(--text-primary);
+  }
+
+  .formBlock a {
+    color: var(--text-primary);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formContainer {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.headerForm,
+.message {
+
+  text-align: center;
+
+}
+
+.formBlock {
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.formBlock input,
+.formBlock label {
+  width: 180px;
+}
+
+.formBlock a:hover {
+  text-decoration: underline;
+}

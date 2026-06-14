@@ -1,0 +1,88 @@
+@media (prefers-color-scheme: dark) {
+  .menu {
+    background: var(--surface-dark);
+    border: 1px solid var(--border-dark);
+  }
+
+  .menu .contextMenu .groupActions .action {
+    color: var(--text-primary-dark);
+  }
+
+  .menu .contextMenu .groupActions .action:hover {
+    background: var(--accent-soft-dark);
+    color: var(--accent-dark);
+  }
+
+  .menu .contextMenu .groupActions .action kbd {
+    background: var(--accent-soft-dark);
+    color: var(--accent-dark);
+    border: 1px solid var(--accent-border-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+
+  .menu {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+  }
+
+  .menu .contextMenu .groupActions .action {
+    color: var(--text-primary);
+  }
+
+  .menu .contextMenu .groupActions .action:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .menu .contextMenu .groupActions .action kbd {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+  }
+
+}
+
+.menu {
+
+  width: 200px;
+  user-select: none;
+  position: absolute;
+  z-index: 999999;
+  left: 0px;
+  top: 0px;
+  font-size: 13px;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 30, 70, 0.12);
+  padding: 7px;
+
+}
+
+.menu .contextMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px;
+  gap: 5px;
+}
+
+.menu .contextMenu .groupActions {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu .contextMenu .groupActions .action {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 3px;
+  transition: background 0.1s;
+  border-radius: 10px;
+}
+
+.menu .contextMenu .groupActions .action kbd {
+  font-family: monospace;
+  padding: 0.15rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.7rem;
+}

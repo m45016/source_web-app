@@ -1,0 +1,11 @@
+@import 'base.css';
+
+.text{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.imgTutorial{
+  width: 75%;
+}

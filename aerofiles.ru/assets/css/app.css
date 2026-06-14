@@ -1,0 +1,509 @@
+@import 'base.css';
+@import 'contextMenu.css';
+
+@media (prefers-color-scheme: dark) {
+  .storageWindow {
+    box-shadow: var(--shadow-sm-dark);
+    background: var(--surface-dark);
+    border: 1px solid var(--border-dark);
+  }
+
+  .wrapperElement:hover,
+  .wrapperElement.activeElement:hover {
+    background: var(--accent-soft-dark);
+    border-color: var(--accent-border-dark);
+  }
+
+  .wrapperElement.activeElement {
+    background: var(--accent-soft-dark);
+    border: 2px solid var(--accent-dark);
+  }
+
+  .wrapperElement.activeElement:hover .nameElement {
+    color: cornflowerblue;
+  }
+
+  .wrapperElement:hover .imgElement {
+    filter: brightness(1.1) drop-shadow(0 2px 6px rgba(79, 158, 255, 0.3));
+  }
+
+  .wrapperElement.activeElement .nameElement {
+    color: var(--accent-dark);
+  }
+
+  .wrapperElement:hover .nameElement {
+    color: cornflowerblue;
+  }
+
+  .nameElement {
+    color: var(--text-primary-dark);
+  }
+
+  .asideMenu {
+    background: var(--surface-dark);
+    border: 1px solid var(--border-dark);
+    box-shadow: var(--shadow-sm-dark);
+  }
+
+  .asideHeader {
+    color: var(--accent-dark);
+  }
+
+  .textProgress {
+    color: var(--text-secondary-dark);
+  }
+
+  .progressSizeStorage::-webkit-progress-bar {
+    background-color: var(--border-dark);
+  }
+
+  .progressSizeStorage::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--accent-dark), #6b8cff);
+  }
+
+  .selectedFolder:hover {
+    color: var(--accent-dark);
+  }
+
+  .selectedFolder {
+    color: var(--text-secondary-dark);
+  }
+
+  .withoutFolders {
+    color: var(--text-secondary-dark);
+  }
+
+  .progressLoaded::-webkit-progress-bar {
+    background: var(--border-dark);
+  }
+
+  .progressLoaded::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--accent-dark), #6b8cff);
+  }
+
+  .pathContainer {
+    background: var(--surface-dark);
+    border: 1px solid var(--border-dark);
+    color: var(--text-secondary-dark);
+    box-shadow: var(--shadow-sm-dark);
+  }
+
+  span[action='goToFolder'] {
+    color: var(--accent-dark);
+  }
+
+  span[action='goToFolder']:hover {
+    color: var(--accent-dark);
+  }
+
+  .path {
+    color: var(--text-secondary-dark);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--border-dark);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-light-dark);
+  }
+}
+
+@media(prefers-color-scheme: light) {
+  .storageWindow {
+    box-shadow: var(--shadow-sm);
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+  }
+
+  .wrapperElement:hover,
+  .wrapperElement.activeElement:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent-border);
+  }
+
+  .wrapperElement.activeElement {
+    background: var(--accent-soft);
+    border: 2px solid var(--accent);
+  }
+
+  .wrapperElement.activeElement:hover .nameElement {
+    color: cornflowerblue;
+  }
+
+  .wrapperElement:hover .imgElement {
+    filter: brightness(1.05) drop-shadow(0 2px 4px rgba(29, 78, 216, 0.15));
+  }
+
+  .wrapperElement.activeElement .nameElement {
+    color: var(--accent);
+  }
+
+  .wrapperElement:hover .nameElement {
+    color: cornflowerblue;
+  }
+
+  .nameElement {
+    color: var(--text-primary);
+  }
+
+  .asideMenu {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .asideHeader {
+    color: var(--accent);
+  }
+
+  .textProgress {
+    color: var(--text-secondary);
+  }
+
+  .progressSizeStorage::-webkit-progress-bar {
+    background-color: var(--border-light);
+  }
+
+  .progressSizeStorage::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  }
+
+  .selectedFolder:hover {
+    color: var(--accent);
+  }
+
+  .selectedFolder {
+    color: var(--text-secondary);
+  }
+
+  .withoutFolders {
+    color: var(--text-secondary);
+  }
+
+  .progressLoaded::-webkit-progress-bar {
+    background: var(--border-light);
+  }
+
+  .progressLoaded::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  }
+
+  .pathContainer {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  span[action='goToFolder'] {
+    color: var(--accent);
+  }
+
+  span[action='goToFolder']:hover {
+    color: var(--accent);
+  }
+
+  .path {
+    color: var(--text-secondary);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--border-light);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-light);
+  }
+
+}
+
+main {
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+}
+
+.storageWindow {
+  display: flex;
+  padding: 10px 10px 23px 10px;
+  gap: 20px;
+  width: 100%;
+  height: 0px;
+  flex-wrap: wrap;
+  overflow: auto;
+  border-radius: 5px;
+  user-select: none;
+  align-content: baseline;
+  flex-grow: 1;
+  border-radius: 24px;
+}
+
+.storageWindow.withoutFiles {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.storageWindow::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+  height: 8px;
+}
+
+.storageWindow::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 8px;
+
+}
+
+.storageWindow::-webkit-scrollbar-track {
+  border-radius: 16px;
+  background-color: transparent;
+}
+
+.storageElement {
+  width: 77px;
+  height: 100px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 20px;
+}
+
+.wrapperElement {
+  padding: 10px;
+  border-radius: 20px;
+  transition: background 0.15s, transform 0.1s;
+  border: 1px solid transparent;
+}
+
+.wrapperElement.activeElement {
+  padding: 9px;
+}
+
+
+.storageElement:hover,
+.storageElement:has(.wrapperElement.activeElement) {
+  z-index: 9;
+}
+
+.imgElement {
+  width: 45px;
+  height: 60px;
+  transition: filter 0.15s;
+}
+
+.imgBlock {
+  text-align: center;
+}
+
+.wrapperElement.activeElement .nameElement {
+  width: 57px;
+  word-break: break-word;
+}
+
+.nameElement {
+  width: 57px;
+  font-size: 12px;
+  user-select: none;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  word-wrap: break-word;
+}
+
+.nameElement.editNameElement {
+  overflow: visible;
+  display: block;
+  background-color: white !important;
+  color: black !important;
+}
+
+.asideMenu {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  max-width: 200px;
+  width: 100%;
+  gap: 10px;
+  padding: 2px;
+  border-radius: 24px;
+}
+
+.asideHeader {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sizeStorageContainer {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.textProgress {
+  text-align: center;
+  font-size: 12px;
+}
+
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.progressSizeStorage::-webkit-progress-bar {
+  flex-grow: 1;
+  height: 6px;
+  border-radius: 12px;
+}
+
+.progressSizeStorage::-webkit-progress-value {
+  transition: all 0.3s;
+  border-radius: 10px;
+}
+
+.selectedFolders {
+  display: flex;
+  flex-direction: column;
+  height: 1px;
+  align-items: center;
+  flex-grow: 1;
+  overflow: auto;
+  padding-bottom: 10px;
+}
+
+.selectedFolder:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.selectedFolders::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+  height: 8px;
+}
+
+.selectedFolders::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+}
+
+.selectedFolders::-webkit-scrollbar-track {
+  border-radius: 16px;
+  background-color: transparent;
+}
+
+.withoutFolders {
+  padding: 0px 10px;
+  text-align: center;
+}
+
+.containerMain {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+}
+
+.progressZone {
+  text-align: center;
+  font-size: 10px;
+  position: relative;
+  bottom: 1rem;
+}
+
+.progressLoaded {
+  width: 77px;
+}
+
+.progressLoaded::-webkit-progress-bar {
+  border-radius: 4px;
+  width: 77px;
+  height: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.progressLoaded::-webkit-progress-value {
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.containerWindow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.pathContainer {
+  overflow-x: auto;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 40px;
+}
+
+.pathContainer::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+  height: 8px;
+}
+
+.pathContainer::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 8px;
+}
+
+.pathContainer::-webkit-scrollbar-track {
+  border-radius: 16px;
+  background-color: transparent;
+}
+
+
+.scrollPathContainer {
+  white-space: nowrap;
+  width: 0px;
+}
+
+span[action='goToFolder'] {
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+span[action='goToFolder']:hover {
+  text-decoration: underline;
+}
+
+.path {
+  padding-right: 20px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+}
+
+@media (max-width: 520px) {
+  main{
+    flex-direction: column;
+  }
+  .asideMenu{
+    height: 230px;
+    max-width: none;
+  }
+  .storageWindow{
+    height: 300px;
+  }
+}

@@ -1,0 +1,94 @@
+.modalContainer {
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modalWindow {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+  gap: 5px;
+  box-sizing: border-box;
+  max-height: 146px;
+  margin: 10px 20px;
+  min-width: 400px;
+  position: fixed;
+  transition: all .3s linear;
+  transform: rotateX(90deg);
+}
+
+.modalWindow[fixedHeight='false']{
+  max-height: none !important;
+}
+
+.modalWindow>.modalText {
+  max-height: 48px;
+  overflow: auto;
+  text-align: justify;
+}
+
+.modalWindow[fixedHeight='false']>.modalText{
+  max-height: none !important;
+  text-align: left !important;
+}
+
+.modalWindow>.modalHeader {
+  font-size: large;
+  font-weight: bold;
+}
+
+.modalWindow>.modalActions {
+  text-align: end;
+}
+
+@media (max-width: 400px) {
+  .modalWindow {
+    min-width: stretch;
+  }
+
+  .modalContainer {
+    align-items: center;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .modalWindow{
+    background-color: var(--surface);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .modalWindow{
+    background-color: var(--surface-dark);
+    border: 1px solid var(--border-dark);
+    box-shadow: var(--shadow-sm-dark);
+  }
+}
+
+.modalText::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+  height: 8px;
+}
+
+.modalText::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 8px;
+}
+
+.modalText::-webkit-scrollbar-track {
+  border-radius: 16px;
+  background-color: transparent;
+}

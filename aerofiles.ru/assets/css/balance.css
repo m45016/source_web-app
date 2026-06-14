@@ -1,0 +1,14 @@
+@import 'base.css';
+@import 'form.css';
+
+.balance{
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+
+}
+
+.balance>div{
+  text-align: center;
+}

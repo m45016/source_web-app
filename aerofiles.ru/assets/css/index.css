@@ -1,0 +1,68 @@
+@import 'base.css';
+
+@media (prefers-color-scheme: dark) {
+  .feature {
+    background-color: var(--surface-dark);
+    color: var(--text-secondary-dark);
+    box-shadow: var(--shadow-sm-dark);
+  }
+
+  .featureHeader {
+    color: var(--accent-hover-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {  
+  .feature {
+    background-color: var(--surface);
+    color: var(--text-secondary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .featureHeader {
+    color: var(--accent-light);
+  }
+}
+
+main {
+  gap: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+div.text {
+  text-align: center;
+}
+
+a.btn:hover {
+  text-decoration: none;
+}
+
+.features {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+div.icon {
+  font-size: 30px;
+}
+
+.featureHeader {
+  font-size: larger;
+}
