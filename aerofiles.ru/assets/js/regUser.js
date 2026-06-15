@@ -23,7 +23,7 @@ document.getElementsByName('reg_btn')[0].addEventListener('click', async (e) => 
   if (login.length > 2 &&
     rep_pass.length != 0 &&
     email.length != 0 &&
-    /(?=.*\d)(?=.*[A-Z])(?=.*[a-z])[A-Za-z\d]{8,}/.test(pass) &&
+    /(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\s])[A-Za-z\d]{8,}/.test(pass) &&
     email.includes('@') &&
     email[email.length - 1] !== '@'
   ) {

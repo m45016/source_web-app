@@ -5,7 +5,6 @@ session_start();
 
 require "{$_SERVER['DOCUMENT_ROOT']}/assets/php/jsonSchema/autoload.php";
 
-use Swaggest\JsonSchema\Exception\Error;
 use Swaggest\JsonSchema\Schema;
 use Swaggest\JsonSchema\InvalidValue;
 
@@ -14,8 +13,8 @@ $jsonSchema = (object)[
   'properties' => (object)[
     'reg' => (object)['type' => 'boolean', 'enum' => [true]],
     'login' => (object)['type' => 'string', 'minLength' => 2],
-    'pass' => (object)['type' => 'string', 'minLength' => 8, 'pattern' => '^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])[A-Za-z\d]{8,}$'],
-    'rep_pass' => (object)['type' => 'string', 'minLength' => 8, 'pattern' => '^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])[A-Za-z\d]{8,}$'],
+    'pass' => (object)['type' => 'string', 'minLength' => 8, 'pattern' => '^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\s])[A-Za-z\d]{8,}$'],
+    'rep_pass' => (object)['type' => 'string', 'minLength' => 8, 'pattern' => '^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\s])[A-Za-z\d]{8,}$'],
     'csrf' => (object)['type' => 'string', 'pattern' => '^[\dabcdef]{64}$'],
     'email' => (object)['type' => 'string', 'format' => 'email']
   ],
